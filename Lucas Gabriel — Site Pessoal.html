@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lucas Gabriel</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#161320;
+    --bg2:#1f1a2e;
+    --panel:#221c33;
+    --text:#f1eef8;
+    --muted:#a89dc2;
+    --cyan:#00e0d8;
+    --pink:#ff3f8e;
+    --yellow:#ffcb3d;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit;margin:0;padding:0;}
+  html{scroll-behavior:smooth;scroll-padding-top:70px;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.brand{font-family:'Chakra Petch',sans-serif;}
+
+  nav{
+    position:sticky; top:env(safe-area-inset-top,0px);
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 6vw;
+    background:rgba(22,19,32,.85);
+    backdrop-filter:blur(8px);
+    z-index:10;
+    border-bottom:1px solid #2c2540;
+  }
+  .brand{font-size:1.15rem; font-weight:700; letter-spacing:.3px;}
+  .brand span{color:var(--cyan);}
+  .links{display:flex; gap:28px; list-style:none;}
+  .links a{color:var(--muted); text-decoration:none; font-size:.95rem; font-weight:500; transition:color .2s;}
+  .links a:hover{color:var(--text);}
+
+  section{padding:90px 6vw; max-width:1000px; margin:0 auto;}
+
+  .hero{
+    min-height:calc(100svh - 70px);
+    display:flex; flex-direction:column; justify-content:center;
+    position:relative;
+    max-width:1100px;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; top:-10%; right:-10%;
+    width:420px; height:420px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,63,142,.25), transparent 70%);
+    filter:blur(10px); z-index:-1;
+  }
+  .hero p.eyebrow{color:var(--cyan); font-size:.95rem; font-weight:600; margin-bottom:14px;}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.6rem); line-height:1.05; font-weight:700; max-width:15ch;}
+  .hero .accent{color:var(--pink);}
+  .hero p.lead{margin-top:22px; max-width:46ch; color:var(--muted); font-size:1.1rem;}
+  .hero .cta{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap;}
+  .btn{
+    padding:13px 26px; border-radius:8px; font-weight:600; text-decoration:none;
+    font-size:.95rem; display:inline-block; transition:transform .15s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn.primary{background:var(--cyan); color:#0b0f14;}
+  .btn.ghost{border:1px solid #3a3252; color:var(--text);}
+
+  .section-head{margin-bottom:44px;}
+  .section-head p.tag{color:var(--pink); font-weight:600; font-size:.9rem; margin-bottom:8px;}
+  .section-head h2{font-size:clamp(1.8rem,4vw,2.4rem); font-weight:700;}
+
+  #sobre p{color:var(--muted); max-width:62ch; font-size:1.05rem;}
+
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:22px;}
+  .card{
+    background:var(--panel); border:1px solid #2c2540; border-radius:12px;
+    padding:26px; transition:border-color .2s;
+  }
+  .card:hover{border-color:var(--cyan);}
+  .card h3{font-size:1.1rem; margin-bottom:8px;}
+  .card p{color:var(--muted); font-size:.95rem;}
+  .card .tag-mini{display:inline-block; margin-top:14px; font-size:.78rem; font-weight:600; color:var(--yellow);}
+
+  #contato{
+    background:var(--bg2); border-radius:16px; margin:0 6vw 90px; max-width:none;
+    padding:70px 8vw; text-align:left;
+  }
+  #contato h2{font-size:clamp(1.8rem,4vw,2.3rem); max-width:16ch; margin-bottom:16px;}
+  #contato p{color:var(--muted); max-width:50ch; margin-bottom:28px;}
+
+  footer{
+    text-align:center; padding:30px 6vw 50px; color:var(--muted); font-size:.85rem;
+  }
+
+  @media (prefers-color-scheme: light){
+    :root:not([data-theme="dark"]){
+      --bg:#faf8ff; --bg2:#f0ecfb; --panel:#ffffff; --text:#1c1730; --muted:#5c5578;
+    }
+    nav{background:rgba(250,248,255,.85); border-bottom:1px solid #e4dff2;}
+    .card{border-color:#e4dff2;}
+    .btn.ghost{border-color:#d8d0ee;}
+  }
+</style>
+</head>
+<body data-theme="dark">
+
+<nav>
+  <div class="brand">Lucas<span>.</span>Gabriel</div>
+  <ul class="links">
+    <li><a href="#inicio">Início</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#animes">Animes</a></li>
+    <li><a href="#jogos">Jogos</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="inicio">
+  <p class="eyebrow">Otaku · Gamer · Explorador de mundos</p>
+  <h1>Vivendo entre <span class="accent">animes</span> e <span class="accent">jogos</span></h1>
+  <p class="lead">Esse é o meu cantinho na internet — onde falo do que eu curto assistir e jogar, e guardo as descobertas que valem a pena compartilhar.</p>
+  <div class="cta">
+    <a class="btn primary" href="#animes">Ver meus animes</a>
+    <a class="btn ghost" href="#jogos">Ver meus jogos</a>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="section-head">
+    <p class="tag">Sobre mim</p>
+    <h2>Quem é Lucas Gabriel</h2>
+  </div>
+  <p>Sou apaixonado por animes e jogos — esse site é onde reúno o que estou assistindo, jogando e recomendando no momento. Ainda em construção, mas já dá pra dar uma espiada no que me move.</p>
+</section>
+
+<section id="animes">
+  <div class="section-head">
+    <p class="tag">Animes</p>
+    <h2>O que estou assistindo</h2>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Em destaque</h3>
+      <p>Espaço reservado para o anime do momento — sinopse rápida e por que vale assistir.</p>
+      <span class="tag-mini">Em breve</span>
+    </div>
+    <div class="card">
+      <h3>Favoritos de sempre</h3>
+      <p>Uma lista dos clássicos que sempre revejo, com uma linha sobre cada um.</p>
+      <span class="tag-mini">Em breve</span>
+    </div>
+    <div class="card">
+      <h3>Na fila</h3>
+      <p>O que está esperando na watchlist para as próximas semanas.</p>
+      <span class="tag-mini">Em breve</span>
+    </div>
+  </div>
+</section>
+
+<section id="jogos">
+  <div class="section-head">
+    <p class="tag">Jogos</p>
+    <h2>O que estou jogando</h2>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <h3>Jogando agora</h3>
+      <p>O jogo atual, plataforma e uma impressão rápida sobre a experiência.</p>
+      <span class="tag-mini">Em breve</span>
+    </div>
+    <div class="card">
+      <h3>Top da estante</h3>
+      <p>Os jogos que mais marcaram, com uma nota pessoal sobre cada um.</p>
+      <span class="tag-mini">Em breve</span>
+    </div>
+    <div class="card">
+      <h3>De olho</h3>
+      <p>Lançamentos e jogos que estão na mira para os próximos meses.</p>
+      <span class="tag-mini">Em breve</span>
+    </div>
+  </div>
+</section>
+
+<section id="contato" style="max-width:1000px;">
+  <h2>Bora trocar uma ideia?</h2>
+  <p>Deixe seu contato preferido aqui assim que quiser divulgar — email, Discord, redes sociais, o que fizer mais sentido pra você.</p>
+  <a class="btn primary" href="#inicio">Voltar ao início</a>
+</section>
+
+<footer>
+  © 2026 Lucas Gabriel. Feito com carinho por quem curte um bom anime e uma boa partida.
+</footer>
+
+</body>
+</html>
